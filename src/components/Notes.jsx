@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { notesSelectors } from "../redux/notes/notesSlice";
 import { motion } from "framer-motion";

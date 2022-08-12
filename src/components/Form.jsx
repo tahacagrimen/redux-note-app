@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
@@ -6,7 +6,11 @@ import { addNote } from "../redux/notes/notesSlice";
 import moment from "moment";
 import { motion } from "framer-motion";
 
+import SignIn from "./SignIn";
+
 import "./css/Form.css";
+
+// IMPORT END
 
 function Form() {
   const [note, setNote] = useState("");
@@ -39,6 +43,7 @@ function Form() {
 
   return (
     <div className="addNoteContainer">
+      <SignIn />
       <form className="formContainer" onSubmit={handleSubmit}>
         <textarea
           className="noteArea"

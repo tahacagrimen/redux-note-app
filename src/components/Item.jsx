@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Modal from "./Modal/index";
 
@@ -9,6 +9,8 @@ function Item({ note }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [id, setId] = useState("");
 
+  console.log(note);
+
   const close = () => {
     setModalOpen(false);
   };
@@ -16,7 +18,6 @@ function Item({ note }) {
   const open = () => {
     setModalOpen(true);
     setId(note.id);
-    console.log(id);
   };
 
   return (
@@ -29,7 +30,6 @@ function Item({ note }) {
         }}
       >
         <div className="note">{note.note}</div>
-        <div className="noteDate">{note.dates}</div>
       </motion.div>
 
       <AnimatePresence
@@ -37,7 +37,9 @@ function Item({ note }) {
         exitBeforeEnter={true}
         onExitComplete={() => null}
       >
-        {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
+        {modalOpen && (
+          <Modal id={id} modalOpen={modalOpen} handleClose={close} />
+        )}
       </AnimatePresence>
     </div>
   );
