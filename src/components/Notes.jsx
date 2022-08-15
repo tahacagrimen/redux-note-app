@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { notesSelectors } from "../redux/notes/notesSlice";
-import { motion } from "framer-motion";
+import React from "react";
 import Item from "./Item";
 
 import "./css/Notes.css";
+import { useSelector } from "react-redux";
+import { notesSelectors } from "../redux/notes/notesSlice";
 
 function Notes() {
   const notes = useSelector(notesSelectors.selectAll);
