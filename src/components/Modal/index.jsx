@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
 import Backdrop from "../Backdrop";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { editNote, deleteNote } from "../../redux/notes/notesSlice";
+
 import {
-  notesSelectors,
-  editNote,
-  deleteNote,
-} from "../../redux/notes/notesSlice";
+  doc,
+  updateDoc,
+  deleteDoc,
+  collection,
+  getDocs,
+} from "firebase/firestore";
+
+import { db } from "../../firebase";
 
 const dropIn = {
   hidden: {
@@ -32,8 +38,8 @@ const dropIn = {
   },
 };
 
-const Modal = ({ handleClose, id }) => {
-  const note = useSelector((state) => notesSelectors.selectById(state, id));
+const Modal = ({ handleClose, note, id }) => {
+  const userUid = useSelector((state) => state.user.userUid);
 
   const [noteText, setNoteText] = useState(note.note);
 
@@ -51,11 +57,19 @@ const Modal = ({ handleClose, id }) => {
       })
     );
 
+    const docRef = doc(db, userUid, id);
+    const data = {
+      note: noteText,
+    };
+
+    updateDoc(docRef, data);
+
     handleClose();
   };
 
   const handleDelete = () => {
     dispatch(deleteNote(note.id));
+    deleteDoc(doc(db, userUid, note.id));
     handleClose();
   };
 

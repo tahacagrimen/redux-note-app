@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-
 import { nanoid } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addNote } from "../redux/notes/notesSlice";
 import moment from "moment";
 import { motion } from "framer-motion";
-
+import Login from "./Firebase Login/Login";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import "./css/Form.css";
 
 // IMPORT END
@@ -15,22 +16,33 @@ function Form() {
   const [color, setColor] = useState("");
   const [dates, setDates] = useState("");
 
+  const userUid = useSelector((state) => state.user.userUid);
+
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let date = moment().format("MMM Do YY");
     setDates(date);
 
+    let randomId = nanoid();
+
     dispatch(
       addNote({
-        id: nanoid(),
+        id: randomId,
         note,
         color,
         dates: date,
       })
     );
+
+    setDoc(doc(db, userUid, randomId), {
+      id: randomId,
+      note,
+      color,
+      dates: date,
+    });
 
     setNote("");
     setColor("");
@@ -39,6 +51,7 @@ function Form() {
 
   return (
     <div className="addNoteContainer">
+      <Login />
       <form className="formContainer" onSubmit={handleSubmit}>
         <textarea
           className="noteArea"

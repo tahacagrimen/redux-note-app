@@ -5,8 +5,29 @@ import "./css/Notes.css";
 import { useSelector } from "react-redux";
 import { notesSelectors } from "../redux/notes/notesSlice";
 
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+import { useState } from "react";
+import { useEffect } from "react";
+
 function Notes() {
-  const notes = useSelector(notesSelectors.selectAll);
+  const [notes, setNotes] = useState([]);
+
+  const userUid = useSelector((state) => state.user.userUid);
+
+  useEffect(() => {
+    const getNotes = async () => {
+      const notesRef = collection(db, userUid);
+      const snapshots = await getDocs(notesRef);
+      const docs = snapshots.docs.map((doc) => doc.data());
+      setNotes(docs);
+    };
+    getNotes();
+  }, [userUid, notes]);
+
+  if (!userUid) {
+    return <div>Please login to see your notes</div>;
+  }
 
   return (
     <div className="notesContainer">
