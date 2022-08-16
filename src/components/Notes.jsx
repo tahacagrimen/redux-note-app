@@ -30,7 +30,7 @@ function Notes() {
   }
 
   return (
-    <div className="notesContainer">
+    <div className="notesContainer bg-red-400 h-auto md:w-3/4 w-full">
       {notes.map((note) => (
         <Item key={note.id} note={note} />
       ))}

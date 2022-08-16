@@ -7,7 +7,7 @@ import ReactDOM from "react-dom/client";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-sans flex md:flex-row flex-col">
       <Form />
       <Notes />
     </div>
