@@ -4,10 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { addNote } from "../redux/notes/notesSlice";
 import moment from "moment";
 import { motion } from "framer-motion";
-import Login from "./Firebase Login/Login";
+
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import "./css/Form.css";
+
+import Profile from "./Profile";
 
 // IMPORT END
 
@@ -51,7 +53,7 @@ function Form() {
 
   return (
     <div className="addNoteContainer flex items-center justify-between flex-col bg-slate-300 p-8 md:h-screen max-h-full md:w-1/4 w-full ">
-      <Login />
+      <Profile />
       <form className="formContainer w-full" onSubmit={handleSubmit}>
         <textarea
           className="noteArea md:w-full w-full md:h-96 h-48 shadow-xl border-solid border-2 border-sky-500 rounded-lg resize-none box-border p-4 first-line:font-bold first-line:text-xl "
