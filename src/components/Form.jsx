@@ -11,6 +11,9 @@ import "./css/Form.css";
 
 import Profile from "./Profile";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // IMPORT END
 
 function Form() {
@@ -29,6 +32,30 @@ function Form() {
     setDates(date);
 
     let randomId = nanoid();
+
+    if (note === "") {
+      toast.error("Please enter a note", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return null;
+    } else if (color === "") {
+      toast.error("Please select a color", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return null;
+    }
 
     dispatch(
       addNote({
@@ -52,18 +79,18 @@ function Form() {
   };
 
   return (
-    <div className="addNoteContainer flex items-center justify-between flex-col bg-slate-300 p-8 md:h-screen max-h-full md:w-1/4 w-full ">
+    <div className="addNoteContainer flex items-center justify-between flex-col bg-slate-300 md:p-8 p-4 md:h-screen max-h-full md:w-1/5 w-full md:sticky top-0 left-0">
       <Profile />
       <form className="formContainer w-full" onSubmit={handleSubmit}>
         <textarea
-          className="noteArea md:w-full w-full md:h-96 h-48 shadow-xl border-solid border-2 border-sky-500 rounded-lg resize-none box-border p-4 first-line:font-bold first-line:text-xl "
+          className="noteArea md:w-full w-full md:h-96 h-32 shadow-xl border-solid border-2 border-sky-500 rounded-lg resize-none box-border md:p-4 p-2 first-line:font-bold first-line:text-xl whitespace-pre-line"
           type="text"
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="Note"
         />
         <div className="colorsAndAddBtn flex items-center justify-center flex-col p-2">
-          <div className="colors flex justify-between items-center mt-4">
+          <div className="colors flex justify-between items-center mb:mt-4 mt-2">
             <div
               className="firstColor color w-8 h-8 rounded-full flex items-center justify-center m-1 hover:animate-bounce"
               onClick={() => setColor("rgba(191, 90, 117, 0.4)")}
@@ -151,12 +178,25 @@ function Form() {
             </div>
           </div>
           <motion.button
-            className="addBtn w-3/4 mt-4 h-10 bg-sky-500 text-white rounded-lg shadow-xl hover:scale-125 active:bg-sky-600"
+            className="addBtn w-3/4 mt-4 md:h-10 h-6 bg-sky-500 text-white rounded-lg shadow-xl hover:scale-125 active:bg-sky-600"
             type="submit"
             whileHover={{ scale: 1.1 }}
           >
             Add Note
           </motion.button>
+          <ToastContainer
+            position="top-right"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          {/* Same as */}
+          <ToastContainer />
         </div>
       </form>
     </div>

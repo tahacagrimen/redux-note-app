@@ -77,7 +77,7 @@ const Modal = ({ handleClose, note, id }) => {
     <Backdrop onClick={() => handleClose()}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="modal orange-gradient"
+        className="sm:w-96 sm:h-96 h-64 w-full bg-white  rounded-lg border border-gray-400 m-4 py-5 px-4"
         variants={dropIn}
         initial="hidden"
         animate="visible"
@@ -89,10 +89,17 @@ const Modal = ({ handleClose, note, id }) => {
               type="text"
               onChange={(e) => setNoteText(e.target.value)}
               defaultValue={note.note}
+              className="resize-none  border-gray-400 rounded-lg border w-full sm:h-72 h-44 p-4 first-line:font-bold whitespace-pre-line"
             />
           </div>
-          <button type="submit">Update</button>
-          <button onClick={handleDelete}>Delete</button>
+          <div className="flex flex-row items-center justify-between mt-4">
+            <button className="font-bold" type="submit">
+              Update
+            </button>
+            <button className="font-bold text-red-700" onClick={handleDelete}>
+              Delete
+            </button>
+          </div>
         </form>
       </motion.div>
     </Backdrop>

@@ -21,7 +21,7 @@ function Notes() {
   }, []);
 
   return (
-    <div className="notesContainer bg-red-400 h-auto md:w-3/4 w-full">
+    <div className="notesContainer h-auto md:w-4/5 w-full flex items-start justify-start content-start sm:flex-wrap sm:flex-row flex-col gap-4 p-4">
       {notes.map((note) => (
         <Item key={note.id} note={note} />
       ))}

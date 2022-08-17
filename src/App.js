@@ -10,7 +10,7 @@ function App() {
 
   if (userUid) {
     return (
-      <div className="App">
+      <div className="App flex sm:flex-row flex-col justify-start">
         <Form />
         <Notes />
       </div>
