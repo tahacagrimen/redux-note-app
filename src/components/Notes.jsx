@@ -4,7 +4,13 @@ import Item from "./Item";
 import "./css/Notes.css";
 import { useSelector } from "react-redux";
 
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -14,7 +20,9 @@ function Notes() {
   const userUid = useSelector((state) => state.user.userUid);
 
   useEffect(() => {
-    onSnapshot(collection(db, userUid), (snapshot) => {
+    const colRef = collection(db, userUid);
+    const q = query(colRef, orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
       console.log(snapshot.docs.map((doc) => doc.data()));
       setNotes(snapshot.docs.map((doc) => doc.data()));
     });

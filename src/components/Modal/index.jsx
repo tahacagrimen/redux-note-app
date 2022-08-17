@@ -60,6 +60,7 @@ const Modal = ({ handleClose, note, id }) => {
     const docRef = doc(db, userUid, id);
     const data = {
       note: noteText,
+      timestamp: Date.now(),
     };
 
     updateDoc(docRef, data);

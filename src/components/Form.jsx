@@ -71,6 +71,7 @@ function Form() {
       note,
       color,
       dates: date,
+      timestamp: Date.now(),
     });
 
     setNote("");
