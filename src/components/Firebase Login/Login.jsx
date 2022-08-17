@@ -93,6 +93,12 @@ function Login() {
           </svg>
           Sign in with Google
         </button>
+        <p>
+          Coded by{" "}
+          <a className="font-bold" href="https://github.com/tahacagrimen">
+            Taha Çağrı Men
+          </a>
+        </p>
       </div>
     </div>
   );
