@@ -37,7 +37,7 @@ https://redux-note-app.vercel.app/
 
 <br/>
 
-<img src="shorturl.at/giKX0" align="left" width="360" >
+<img src="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/42.gif" align="left" width="360" >
 
 <br/>
 
@@ -45,6 +45,6 @@ https://redux-note-app.vercel.app/
 
 <br/>
 
-<a href="https://redux-note-app.vercel.app/"><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135270691581982/43.gif" align="left" width="360" ></a>
+<a href="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/43.gif" align="left" width="360" ></a>
 
 
