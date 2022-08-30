@@ -32,6 +32,7 @@ https://redux-note-app.vercel.app/
 ## Screenshots
 
 ### Desktop
+<br/>
 <p><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135226714292234/42.gif" align="left" width="720" ></p>
 
 <br/>
