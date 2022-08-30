@@ -32,8 +32,8 @@ https://redux-note-app.vercel.app/
 ## Screenshots
 
 ### Web
-![App Screenshot](https://cdn.discordapp.com/attachments/983243591180763136/1014135226714292234/42.gif)
+![App Screenshot1](https://cdn.discordapp.com/attachments/983243591180763136/1014135226714292234/42.gif)
 
 ### Mobile
-![App Screenshot](https://cdn.discordapp.com/attachments/983243591180763136/1014135270691581982/43.gif)
+![App Screenshot2](https://cdn.discordapp.com/attachments/983243591180763136/1014135270691581982/43.gif)
 
