@@ -37,7 +37,7 @@ https://redux-note-app.vercel.app/
 
 <br/>
 
-<img src="https://cdn.discordapp.com/attachments/983243591180763136/1014140671365480528/42.gif" align="left" width="360" >
+<img src="shorturl.at/giKX0" align="left" width="360" >
 
 <br/>
 
