@@ -41,7 +41,6 @@ https://redux-note-app.vercel.app/
 
 ### Mobile
 
-<br/>
 ![App Screenshot](https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/43.gif)
 
 
