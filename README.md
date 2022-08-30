@@ -32,9 +32,11 @@ https://redux-note-app.vercel.app/
 ## Screenshots
 
 ### Desktop
-<a href="url"><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135226714292234/42.gif" align="left" width="720" ></a>
+<a href="https://redux-note-app.vercel.app/"><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135226714292234/42.gif" align="left" width="720" ></a>
+
+<br/>
 
 ### Mobile
-<a href="url"><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135270691581982/43.gif" align="left" width="360" ></a>
+<a href="https://redux-note-app.vercel.app/"><img src="https://cdn.discordapp.com/attachments/983243591180763136/1014135270691581982/43.gif" align="left" width="360" ></a>
 
 
