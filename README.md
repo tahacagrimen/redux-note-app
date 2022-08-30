@@ -31,20 +31,18 @@ https://redux-note-app.vercel.app/
 
 ## Screenshots
 
-<br/>
-
 ### Desktop
 
 <br/>
 
-<img src="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/42.gif" align="left" width="720" >
+![App Screenshot](https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/42.gif)
 
 <br/>
 
 ### Mobile
 
 <br/>
+![App Screenshot](https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/43.gif)
 
-<a href="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/43.gif" align="left" width="360" ></a>
 
 
