@@ -37,7 +37,7 @@ https://redux-note-app.vercel.app/
 
 <br/>
 
-<img src="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/42.gif" align="left" width="360" >
+<img src="https://github.com/tahacagrimen/redux-note-app/blob/master/gifs/42.gif" align="left" width="720" >
 
 <br/>
 
